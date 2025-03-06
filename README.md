@@ -11,7 +11,7 @@ In this project I used Excel to clean and organize data in order to create an in
 - The **orders**, **customers** and **products** sheets are where you will find the tables with the data after it was cleaned and organized through the steps explained below.
 - **TotalSales**, **CountryChart** and **Top5Customers** include pivot tables intended to facilitate the creation of visualizations and filters that will become part of the final dashboard.
 
-# Steps taken
+# Process
 - Populating the orders table
   1) Used XLOOKUP to reference each customer's information (name and email) and add it to the **orders** table. Some customers didn't have email data, so they are shown as "N/A".
   2) Used INDEX and MATCH to dynamically populate each cell with the product information taken from the **products** table.
