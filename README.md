@@ -4,20 +4,43 @@ In this project I used Excel to clean and organize data in order to create an in
 
 # Sheets
 - The first sheet includes the finalized **Dashboard**.
-- The last three sheets show the raw data I started the project with. This includes:
-  1) **orders_raw_data**, where the primary key is the "Order ID" column.
-  2) **customers_raw_data**, related to the **orders** sheet through the "Customer ID" column.
-  3) **products_raw_data**, which relates to the **orders** sheet through the "Product ID" column.
+ 
+  ![Dashboard](01coffeesalesdashboard.jpg)
+  
 - The **orders**, **customers** and **products** sheets are where you will find the tables with the data after it was cleaned and organized through the steps explained below.
 - **TotalSales**, **CountryChart** and **Top5Customers** include pivot tables intended to facilitate the creation of visualizations and filters that will become part of the final dashboard.
+- The last three sheets show the raw data I started the project with. This includes:
+  1) **orders_raw_data**, where the primary key is the "Order ID" column.
+     ![orders_raw](02_orders_raw_data.jpg)
+     
+  2) **customers_raw_data**, related to the **orders** sheet through the "Customer ID" column.
+     ![customers_raw](03_customers_raw_data.jpg)
+     
+  3) **products_raw_data**, which relates to the **orders** sheet through the "Product ID" column.
+     ![products_raw](04_products_raw_data.jpg)
+     
 
 # Process
-- Populating the orders table
-  1) Used XLOOKUP to reference each customer's information (name and email) and add it to the **orders** table. Some customers didn't have email data, so they are shown as "N/A".
+- We begin the process by populating the orders table
+  1) Used XLOOKUP to reference each customer's information (Name, Country and Email) and add it to the **orders** table. Some customers didn't have email data, so they are shown as "N/A".
+     ![xlookup_customer](05_xlookup_custname.jpg)
+     
+     ![if_xlookup_email](06_if_xlookup_email.jpg)
+     
+     ![xlookup_country](07_xlookup_country.jpg)
+     
   2) Used INDEX and MATCH to dynamically populate each cell with the product information taken from the **products** table.
+   ![index_match](08_index_match.jpg)
+
   3) Calculate **Sales**.
+     ![sales](09_sales.jpg)
+     
   4) Create a **Coffee Type Full Name** column that shows the full name of each coffee type (this will be needed later to make the Dashboard easier to read). Use a nested IF formula to populate the column.
+     ![coffeename](10_coffee_name.jpg)
+     
   5) Create a **Roast Type Name** column to show the name of the different kinds of roasts, and populate it using a similar nested IF function.
+     ![roasttypename](11_roasttype_name.jpg)
+     
   6) Create a **Loyalty Card** column showing whether each customer has a card or not. Once again use XLOOKUP to populate this column with data from the **customers** table.
  
 - Formatting and cleaning the orders table
